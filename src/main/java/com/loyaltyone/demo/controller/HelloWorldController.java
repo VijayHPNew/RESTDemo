@@ -24,4 +24,11 @@ public class HelloWorldController {
 			return strText;
 	}
 
+	@RequestMapping(method=RequestMethod.POST, value="/displayText/post")
+			public String postText(@RequestBody String strText) {
+
+				return strText;
+	}
+
+
 }
