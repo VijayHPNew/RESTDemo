@@ -1,0 +1,76 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="jquery-rest.js"></script>
+<link rel="stylesheet" type="text/css" href="display_style.css">
+<title>HTML form page to call REST to POST, retrieve and display content</title>
+</head>
+<body>
+
+<form method = "POST" id="user_form">
+<table>
+<tr>
+	<td width="100">
+		<label for="strFirstName">First name:</label>
+	</td>
+	<td>
+		<input type = "text" name = "strFirstName">
+	</td>
+</tr>
+<tr>
+	<td width="100">
+		<label for="strLastName">Last name:</label>
+	</td>
+	<td>
+		<input type = "text" name = "strLastName"></td>
+	<td>
+</tr>
+
+<tr>
+	<td width="100">
+		<label for="strAddress">Address:</label>
+	</td>
+	<td>
+		<input type = "text" name = "strAddress">
+	</td>
+</tr>
+
+<tr>
+	<td width="100">
+		<label for="strPhone">Phone:</label>
+	</td>
+	<td>
+		<input type = "text" name = "strPhone">
+	</td>
+</tr>
+
+<tr>
+	<td width="100">
+		<label for="strEmail">Email:</label>
+	</td>
+	<td>
+		<input type = "text" name = "strEmail">
+	</td>
+</tr>
+
+<tr>
+	<td>
+		<div id="ajax_response">
+		</div>
+	</td>
+</tr>
+
+<tr>
+	<td>
+		<button type="submit" value="DONE" id="DONE">DONE</button>
+	</td>
+</tr>
+</table>
+</form>
+
+<footer id="footer" class="footer">
+
+</footer>
+
+</body>
+</html>
