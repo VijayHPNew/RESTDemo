@@ -10,18 +10,19 @@ import static org.junit.Assert.assertTrue;
 import java.util.Date;
 
 import org.junit.Before;
-import org.junit.Test;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import com.loyaltyone.demo.model.Message;
 public class MessageControllerTest extends AbstractTest {
+	
    @Override
    @Before
    public void setUp() {
       super.setUp();
    }
+   
    @Test
    public void getMessages() throws Exception {
       String uri = "/messages";
@@ -48,11 +49,10 @@ public class MessageControllerTest extends AbstractTest {
       String content = mvcResult.getResponse().getContentAsString();
       
       assertTrue("Content value returned is "+content, content.equals("Hello LoyaltyOne folks"));
-   }
-   
+   }   
   
    @Test
-   public void createProduct() throws Exception {
+   public void createMessage() throws Exception {
       String uri = "/messages";
       Message message = new Message();
       message.setId(11);
