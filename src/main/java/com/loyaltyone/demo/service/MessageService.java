@@ -21,13 +21,12 @@ public class MessageService {
 
 	public List<Message> getAllMessages() {
 
-		//return topics;
 		List<Message> listMessage = messageRepository.findAll();
 		return listMessage;
 	}
 
 	public Message getMessage(String id) {
-		//return topics.stream().filter(t -> t.getId().equals(id)).findFirst().get();
+		
 		Optional<Message> objOptional = messageRepository.findById(id);
 		Message message = objOptional.get();
 		return message;
@@ -35,14 +34,16 @@ public class MessageService {
 	}
 
 	public List<Message> addMessage(Message message) {
-		//System.out.println("Inside addMessage of MessageService- before calling addMessage");
 		messageRepository.save(message);
-		//System.out.println("Inside addMessage of MessageService- after calling addMessage");
 		List<Message> listOfMessages = messageRepository.findAllByUserName(message.getUserName());
 		return listOfMessages;
 
 	}
-
+	
+	/*
+	 * The below methods are NOT implemented at the moment. But typically this will be used to
+	 * complete the possibility of adding all real-time CRUD operations like update and delete.
+	 */
 	public void updateMessage(String id, Message message) {
 
 		messageRepository.save(message);
@@ -53,7 +54,7 @@ public class MessageService {
 
 		messageRepository.deleteById(id);
 
-		}
+	}
 
 
 
