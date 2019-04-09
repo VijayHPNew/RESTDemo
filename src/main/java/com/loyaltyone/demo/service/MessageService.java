@@ -34,11 +34,12 @@ public class MessageService {
 
 	}
 
-	public Message addMessage(Message message) {
-		System.out.println("Inside addMessage of MessageService- before calling addMessage");
-		Message message1 = messageRepository.save(message);
-		System.out.println("Inside addMessage of MessageService- after calling addMessage");
-		return message1;
+	public List<Message> addMessage(Message message) {
+		//System.out.println("Inside addMessage of MessageService- before calling addMessage");
+		messageRepository.save(message);
+		//System.out.println("Inside addMessage of MessageService- after calling addMessage");
+		List<Message> listOfMessages = messageRepository.findAllByUserName(message.getUserName());
+		return listOfMessages;
 
 	}
 

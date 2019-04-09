@@ -20,7 +20,8 @@ public class Message {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="SEQ_GEN")
 	private int id;	
 	
-	private String strMessage;	
+	private String message;	
+	private String userName;
 	
 	@Column(name="Created_at")
 	@Temporal(TemporalType.TIMESTAMP)
@@ -30,10 +31,11 @@ public class Message {
 
 	}
 	
-	public Message(int id, String strMessage, Date objDate) {
+	public Message(int id, String message, String userName, Date objDate) {
 		super();
 		this.id = id;
-		this.strMessage = strMessage;
+		this.message = message;
+		this.userName = userName;
 		this.objDate = objDate;
 	}
 
@@ -45,12 +47,20 @@ public class Message {
 		this.id = id;
 	}
 
-	public String getStrMessage() {
-		return strMessage;
+	public String getMessage() {
+		return message;
 	}
 
-	public void setStrMessage(String strMessage) {
-		this.strMessage = strMessage;
+	public void setMessage(String message) {
+		this.message = message;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	public Date getObjDate() {
